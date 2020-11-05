@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="./jquery-3.4.1.js"></script>
+<style>
+   
+     ul li{
+          list-style: none;
+          font-size: .8rem;
+     }
+     ul li .dome{
+          
+          cursor: pointer;
+          display:flex;
+          flex-direction: row;
+          align-items: center;
+     }
+     ul li .dome p{
+           display: inline-block;
+           transform: rotate(0deg);
+           transition: all .3s ease-in 0s;
+           margin-right: .3rem;
+
+     }
+     .active p{
+
+        transform: rotate(90deg) !important;
+     }
+     li>ul{
+          display: none;
+     } 
+     .no{
+         margin-left: .5rem;
+         
+     }
+     .no::before{
+         content: "";
+         display: inline-block;
+         width: .5rem;
+         height: .5rem;
+         background-color: aqua;
+         margin-right: .3rem;
+     }
+</style>
+<body>
+    <div class="warp"></div>
+      
+</body>
+<script src="./TreePlugin.js"></script>
+<script>
+    var obj = [
+          {
+              title:'Web前端工程师',
+              children:[
+                              {
+                                  title:'业务方向',
+                                  children:[
+                                          {
+                                              title:'中后台管理系统' 
+                                          },
+                                          {
+                                              title:'淘宝，京东等' 
+                                          }
+                                      ] 
+                              },
+                              {
+                                  title:'技术方向',
+                                  children:[
+                                          {
+                                              title:'三大框架',
+                                              children:[
+                                                  {
+                                                       title:'Vue'
+                                                  },{
+                                                       title:'React'
+                                                  },{
+                                                       title:'Angular'
+                                                  }
+                                              ] 
+                                          },
+                                          {
+                                              title:'打包工具',
+                                              children:[
+                                                  {
+                                                      title:'webpack'
+                                                  },
+                                                  {
+                                                      title:'tollup'
+                                                  }
+                                              ] 
+                                          }
+                                   ]  
+                              }
+                          ]
+          },
+          {
+              title:'NodeJs工程师',
+              children:[
+                    {
+                       title:'业务方向',
+                       children:[
+                              {
+                                  title:'A' 
+                              },
+                              {
+                                  title:'B' 
+                              }
+                          ]  
+                    },
+                    {
+                       title:'技术方向',
+                       children:[
+                              {
+                                  title:'业务框架',
+                                  children:[
+                                      {
+                                          title:'Koa'
+                                      },{
+                                          title:'Exprss'
+                                      },{
+                                          title:'Egg'
+                                      },{
+                                          title:'Next.js'
+                                      }
+
+                                  ] 
+                              },
+                              {
+                                  title:'数据库',
+                                  children:[
+                                      {
+                                          title:'MongoDB'
+                                      },{
+                                          title:'Redis'
+                                      },{
+                                          title:'Mysql'
+                                      }
+                                  ] 
+                              }
+                          ] 
+                    }
+              ]
+          },
+          {
+                       title:'客户端工程师',
+                       children:[
+                              {
+                                  title:'业务方向',
+                                  children:[
+                                       {
+                                          title:'全栈应用',
+                                          children:[
+                                              {
+                                                  title:'钉钉'
+                                              },
+                                              {
+                                                  title:'飞书'
+                                              },{
+                                                  title:'微信'
+                                              }
+                                          ]
+                                        },
+                                        {
+                                           title:'混合式Hybrid App(太多)'
+                                        },
+                                        {
+                                            title:'小程序',
+                                            children:[
+                                                {
+                                                     title:'微信小程序'
+                                                },{
+                                                     title:'QQ小程序'
+                                                },{
+                                                     title:'支付宝小程序'
+                                                },{
+                                                     title:'头条小程序'
+                                                }
+                                            ]
+                                        }
+                                  ] 
+                              },
+                              {
+                                  title:'技术方向',
+                                  children:[
+                                      {
+                                          title:'桌面',
+                                          children:[
+                                              {
+                                                  title:'Electron'
+                                              },{
+                                                  title:'QT'
+                                              },{
+                                                  title:'NW'
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          title:'原生App(Flutter)'
+                                      },
+                                      {
+                                          title:'Hybird App (React native)'
+                                      }, {
+                                          title:'小程序（小程序引擎）'
+                                      }
+                                  ] 
+                              }
+                          ] 
+          },
+          {
+              title:'图形化工程师',
+              children:[
+                   {
+                       title:'业务方向',
+                       children:[
+                           {
+                               title:'游戏',
+                               children:[
+                                   {
+                                       title:'H5小游戏'
+                                   },
+                                   {
+                                       title:'微信小游戏'
+                                   }
+                               ]
+                           },
+                           {
+                               title:'数据可视化 （数据分析）'
+                           }
+                       ]
+                   },
+                   {
+                       title:'技术方向',
+                       children:[
+                           {
+                               title:'Canvas'
+                           },
+                           {
+                               title:'Egret游戏引擎'
+                           },{
+                               title:'D3'
+                           },{
+                               title:'Threejs'
+                           }
+                       ]
+                   }
+              ]
+          }
+    ]
+    //基于jQuery的树形控件 x
+    $(function(){
+        $('.warp').TreePlugin({
+          data:obj,
+          time:300
+          })  
+    }) 
+</script>
+</html>
