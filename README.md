@@ -1,10 +1,8 @@
-基于 Jquery 的树形控件
-jQuery插件的好处是封装功能，代码比原生Js更简洁，提高了代码的复用性，加快了开发速度；最近在复习JQ的时候，简单的写了一个基于Jquery的树形目录插件。
- * 其实在实际开发中一般树形目录都是用在后台管理系统界面中，对于像购物网站或者一些社交网站等等这些网站用的比较少的，可以说是基本不用。
 
- * 通过$.extend扩展属性或方法给jQuery/$直接被调用
- * 我们通过看Jquery的源码就会知道$.fn就是jQuery的原型，jQuery.fn = jQuery.prototype，$是jQuery的别名。$.fn.extend方法的作用是用于扩展jQuery实例对象，也就是我们从页面中获得的jQuery对象。
-    1. 使用 extend
+
+ * 其实在实际开发中一般树形目录都是用在后台管理系统界面中，对于像购物网站或者一些社交网站等等这些网站用的还是比较少的。
+ * 以下两种方式编写插件（推荐第二种）
+    1. 通过$.extend扩展属性或方法给jQuery/$直接被调用
       ```js
       //编写插件 
 		$(function(){
@@ -19,7 +17,7 @@ jQuery插件的好处是封装功能，代码比原生Js更简洁，提高了代
 			$.say();
 		})
       ```
-     2. 使用$.fn.extend
+     2. 我们通过看Jquery的源码就会知道$.fn就是jQuery的原型，jQuery.fn = jQuery.prototype，$是jQuery的别名。$.fn.extend方法的作用是用于扩展jQuery实例对象，也就是我们从页面中获得的jQuery对象。
       ```js
       /*编写插件*/
 		$(function () {
